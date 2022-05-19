@@ -1,0 +1,23 @@
+### Index
+GET http://localhost:3000/movies.json
+
+### Show
+GET http://localhost:3000/movies/2
+
+### Create
+POST http://localhost:3000/movies.json
+Content-Type: application/json
+
+{
+  "title": "Rush Hour 2",
+  "year": "2001",
+  "plot": "After an explosion at the US Embassy in Hong Kong kills two customs agents investigating currency smuggling, Inspector Lee (Jackie Chan) and James Carter (Chris Tucker) search for the mastermind. Ricky Tan (John Lone), head of the Fu-Cang-Long Triad, sends out his minions to insure that Carter and Lee don't solve the case."
+}
+
+### Update
+PATCH http://localhost:3000/movies/3
+Content-Type: application/json
+
+### Delete
+DELETE http://localhost:3000/movies/4
+Content-Type: application/json
