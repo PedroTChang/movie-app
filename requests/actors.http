@@ -1,0 +1,32 @@
+### Index
+GET http://localhost:3000/actors.json
+
+### Show
+GET http://localhost:3000/actors/7.json
+
+### Create
+POST http://localhost:3000/actors.json
+Content-Type: application/json
+
+{
+    "first_name": "Antonette"
+}
+
+### Update
+PATCH http://localhost:3000/actors/3.json
+Content-Type: application/json
+
+### Delete
+DELETE http://localhost:3000/actors/4.json
+Content-Type: application/json
+
+### URL
+GET http://localhost:3000/actors/Antonette
+
+### Body
+POST http://localhost:3000/actors/
+Content-Type: application/json
+
+{
+    "first_name": "Antonette"
+}
