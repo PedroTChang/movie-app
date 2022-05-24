@@ -1,3 +1,3 @@
 class Movie < ApplicationRecord
-  # belongs_to :actor
+  has_many :actors #* Returns array of many actors
 end
