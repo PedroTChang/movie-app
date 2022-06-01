@@ -4,6 +4,7 @@ GET http://localhost:3000/actors.json
 ### Show
 GET http://localhost:3000/actors/7.json
 
+
 ### Create
 POST http://localhost:3000/actors.json
 Content-Type: application/json

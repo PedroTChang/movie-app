@@ -1,8 +1,12 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTQxMzc0NjN9.7zDoULMejBO4UiZV3dtgP_2OgzjwfgmYGPzQl5hngn4
+
 ### Index
 GET http://localhost:3000/movies.json
+Content-Type: application/json
 
 ### Show
 GET http://localhost:3000/movies/2
+# Authorization: {{ jwt }}
 
 ### Create
 POST http://localhost:3000/movies.json

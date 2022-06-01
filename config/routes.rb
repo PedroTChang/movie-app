@@ -17,4 +17,8 @@ Rails.application.routes.draw do
 
   get "actors/:first_name" => "actors#url"
   post "actors" => "actors#body"
+
+  post "/users" => "users#create"
+
+  post "/sessions" => "sessions#create"
 end
