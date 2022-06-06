@@ -63,3 +63,9 @@
 # #     plot: FFaker::FreedomIpsum.paragraph,
 # #   )
 # # end
+
+10.times do
+  Genre.create(
+    name: FFaker::Music.genre,
+  )
+end
