@@ -15,14 +15,31 @@ class MoviesController < ApplicationController
   def create
     movie = Movie.new(
       title: params[:title],
+      director: params[:director],
       year: params[:year],
       plot: params[:plot],
+      english: params[:english]
     )
-    movie.save
-    render json: movie.as_json
+    if movie.save
+      render json: movie.as_json
+    else
+      render json: { errors: movie.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def update
+    movie = Movie.find_by(id: params[:id])
+    movie.title = params[:title] || movie.title
+    movie.director = params[:director] || movie.director
+    movie.year = params[:year] || movie.year
+    movie.plot = params[:plot] || movie.plot
+    movie.english = params[:english] || movie.english
+
+    if movie.save
+      render json: movie.as_json
+    else
+      render json: { errors: movie.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def delete

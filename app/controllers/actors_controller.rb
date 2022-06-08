@@ -18,9 +18,14 @@ class ActorsController < ApplicationController
       last_name: params[:last_name],
       known_for: params[:known_for],
       movie_id: params[:movie_id],
+      gender: params[:gender],
+      age: params[:age],
     )
-    actor.save
-    render json: actor.as_json
+    if actor.save
+      render json: actor.as_json
+    else
+      render json: { errors: actor.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def update
@@ -28,10 +33,15 @@ class ActorsController < ApplicationController
     actor.first_name = params[:first_name] || actor.first_name
     actor.last_name = params[:last_name] || actor.last_name
     actor.known_for = params[:known_for] || actor.known_for
-    actor.movie_id = params [:movie_id] || actor.movie_id
+    actor.movie_id = params[:movie_id] || actor.movie_id
+    actor.gender = params[:gender] || actor.gender
+    actor.age = params[:age] || actor.age
 
-    actor.save
-    render json: actor.as_json
+    if actor.save
+      render json: actor.as_json
+    else
+      render json: { errors: actor.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def delete

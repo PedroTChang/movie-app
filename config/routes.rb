@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   delete "movies/:id" => "movies#destroy"
 
   get "actors" => "actors#index"
-  # get "actors/:id" => "actors#show"
-  # # post "actors" => "actors#create"
-  # patch "actors/:id" => "actors#update"
-  # delete "actors/:id" => "actors#destroy"
+  get "actors/:id" => "actors#show"
+  post "actors" => "actors#create"
+  patch "actors/:id" => "actors#update"
+  delete "actors/:id" => "actors#destroy"
 
   get "actors/:first_name" => "actors#url"
   post "actors" => "actors#body"

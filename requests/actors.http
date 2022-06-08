@@ -1,3 +1,5 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTQ3ODg0MTd9.A-ZWOebdthRi3GVXpmBsMctdzKrExL_HfdKQie9MzRo
+
 ### Index
 GET http://localhost:3000/actors.json
 
@@ -7,15 +9,31 @@ GET http://localhost:3000/actors/7.json
 
 ### Create
 POST http://localhost:3000/actors.json
+Authorization: Bearer {{ jwt }}
 Content-Type: application/json
 
 {
-    "first_name": "Antonette"
+    "movie_id": 2,
+    "first_name": "Jeff",
+    "last_name": "Lee",
+    "known_for": "Rush Hour",
+    "gender": "male",
+    "age": "words"
 }
 
 ### Update
-PATCH http://localhost:3000/actors/3.json
+PATCH http://localhost:3000/actors/5.json
+Authorization: Bearer {{ jwt }}
 Content-Type: application/json
+
+{
+    "movie_id": 2,
+    "first_name": "Sarah",
+    "last_name": "Smith",
+    "known_for": "It",
+    "gender": "female",
+    "age": "words"
+}
 
 ### Delete
 DELETE http://localhost:3000/actors/4.json

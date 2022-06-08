@@ -6,66 +6,59 @@
 # # #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 # # #   Character.create(name: "Luke", movie: movies.first)
 
-# # # require "ffaker"
-
-# Actor.create(
-#     first_name: FFaker::Name.first_name,
-#     last_name: FFaker::Name.last_name,
-#     known_for: FFaker::Movie.title,
-#     movie_id: 1
-#   )
-
-#   Actor.create(
-#     first_name: FFaker::Name.first_name,
-#     last_name: FFaker::Name.last_name,
-#     known_for: FFaker::Movie.title,
-#     movie_id: 2
-#   )
-
-#   Actor.create(
-#     first_name: FFaker::Name.first_name,
-#     last_name: FFaker::Name.last_name,
-#     known_for: FFaker::Movie.title,
-#     movie_id: 3
-#   )
-
-#   Actor.create(
-#     first_name: FFaker::Name.first_name,
-#     last_name: FFaker::Name.last_name,
-#     known_for: FFaker::Movie.title,
-#     movie_id: 4
-#   )
-
-#   Actor.create(
-#     first_name: FFaker::Name.first_name,
-#     last_name: FFaker::Name.last_name,
-#     known_for: FFaker::Movie.title,
-#     movie_id: 5
-#   )
-
-#   Actor.create(
-#     first_name: FFaker::Name.first_name,
-#     last_name: FFaker::Name.last_name,
-#     known_for: FFaker::Movie.title,
-#     movie_id: 6
-#   )
-
-#   Actor.create(
-#     first_name: FFaker::Name.first_name,
-#     last_name: FFaker::Name.last_name,
-#     known_for: FFaker::Movie.title,
-#     movie_id: 7
-#   )
-# # 10.times do
-# #   Movie.create(
-# #     title: FFaker::Movie.title,
-# #     year: FFaker::Vehicle.year,
-# #     plot: FFaker::FreedomIpsum.paragraph,
-# #   )
-# # end
-
 10.times do
-  Genre.create(
-    name: FFaker::Music.genre,
+  Movie.create(
+    title: FFaker::Movie.title,
+    year: FFaker::Vehicle.year,
+    plot: FFaker::FreedomIpsum.paragraph,
+    director: FFaker::Name.name,
   )
 end
+
+Actor.create(
+  first_name: FFaker::Name.first_name,
+  last_name: FFaker::Name.last_name,
+  known_for: FFaker::Movie.title,
+  movie_id: 1
+  )
+
+Actor.create(
+  first_name: FFaker::Name.first_name,
+  last_name: FFaker::Name.last_name,
+  known_for: FFaker::Movie.title,
+  movie_id: 2
+  )
+
+Actor.create(
+  first_name: FFaker::Name.first_name,
+  last_name: FFaker::Name.last_name,
+  known_for: FFaker::Movie.title,
+  movie_id: 3
+)
+
+Actor.create(
+  first_name: FFaker::Name.first_name,
+  last_name: FFaker::Name.last_name,
+  known_for: FFaker::Movie.title,
+  movie_id: 4
+)
+
+Genre.create(
+  name: "Documentary",
+)
+
+Genre.create(
+  name: "Drama",
+)
+
+Genre.create(
+  name: "Comedy",
+)
+
+Genre.create(
+  name: "Romance",
+)
+
+Genre.create(
+  name: "Action & Adventure",
+)
