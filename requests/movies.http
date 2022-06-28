@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTQxMzc0NjN9.7zDoULMejBO4UiZV3dtgP_2OgzjwfgmYGPzQl5hngn4
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTY0NjUwNTF9.tuBbC7mpUGc4SIXSOIlS8zDMe7OstW0ypHHUs5P23ro
 
 ### Index
 GET http://localhost:3000/movies.json
@@ -25,3 +25,12 @@ Content-Type: application/json
 ### Delete
 DELETE http://localhost:3000/movies/4
 Content-Type: application/json
+
+### Create Movie Genre
+POST http://localhost:3000/movie_genres
+Content-Type: application/json
+
+{
+  "genre_id": 1,
+  "movie_id": 3
+}

@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   patch "movies/:id" => "movies#update"
   delete "movies/:id" => "movies#destroy"
 
+  post "movie_genres" => "movie_genres#create"
+
   get "actors" => "actors#index"
   get "actors/:id" => "actors#show"
   post "actors" => "actors#create"
